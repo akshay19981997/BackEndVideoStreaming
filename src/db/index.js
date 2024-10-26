@@ -3,8 +3,8 @@ import 'dotenv/config';
 import { dbName } from '../constants.js';
 
 
-const connectToDb = () => {
-    mongoose.connect(`${process.env.mongoDbUrl}/${dbName}`, {
+const connectToDb = async () => {
+   await mongoose.connect(`${process.env.mongoDbUrl_local}/${dbName}`, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       }).then (()=>{
@@ -15,3 +15,4 @@ const connectToDb = () => {
 }
 var connectionResult=connectToDb();
 console.log(connectionResult);
+export default connectToDb

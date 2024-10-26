@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/db/index.js"
+    "start": "node src/db/index.js",
+    "dev": "nodemon dotenv/config --expereimental-json-modules src/index.js "
   },
   "author": "AK48",
   "license": "ISC",
