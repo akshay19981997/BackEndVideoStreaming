@@ -1,6 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { Video } from "./video.model.js";
 const userSchema = new mongoose.Schema({
    userName : {
     type:String,
@@ -28,10 +29,13 @@ const userSchema = new mongoose.Schema({
     type:String,
     required:true,
     lowercase:true,
-    trim:true,
-    unique:true
+    trim:true
    },
    avatar : {
+    type:String,
+    required:true,
+   },
+   coverImage : {
     type:String,
     required:true,
    },

@@ -5,11 +5,12 @@ import app from './app.js';
 // const mongoDbUrl = 'mongodb+srv://akshayshukla19971998:hithere@cluster0.av0lt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 import dotenv from "dotenv"
-import connectDB from "./db/index.js";
-// import {app} from './app.js'
 dotenv.config({
     path: './.env'
 })
+import connectDB from "./db/index.js";
+// import {app} from './app.js'
+
 
 
 

@@ -18,4 +18,4 @@ const handleApiError = (err, res) => {
     });
 };
 
-module.exports = { ApiError, handleApiError };
+export {ApiError};
