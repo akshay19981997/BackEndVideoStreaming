@@ -60,13 +60,14 @@ userSchema.pre("save",async function (next){
 })
 
 userSchema.methods.generateAccessTokens = async function () {
+    // console.log("Before JWT SIGN" + " "+ process.env.access_token)
     return jwt.sign({
      id:this._id,
      fullName:this.fullName,
      userName:this.userName,
      email:this.email
 
-    },process.env.access_token,{
+    },process.env.SUPER_SECRET,{
         expiresIn : process.env.access_token_expiry
     })
 }
@@ -74,7 +75,7 @@ userSchema.methods.generateAccessTokens = async function () {
 userSchema.methods.generateRefreshTokens = async function () {
     return jwt.sign({
      id:this._id
-    },process.env.refresh_token,{
+    },process.env.SUPER_SECRET,{
         expiresIn : process.env.refresh_token_expiry
     })
 }
